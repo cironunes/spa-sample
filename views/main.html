@@ -1,0 +1,40 @@
+<div class="clearfix">
+	<div class="pull-left">
+		<form role="form" class="form form-inline" ng-submit="addItem()">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Name" ng-model="item.name">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Price" ng-model="item.price">
+			</div>
+			<button class="btn btn-primary">Add</button>
+		</form>
+	</div>
+	<div class="pull-right">
+		<form role="search">
+			<div class="form-group">
+				<input type="search" class="form-control" placeholder="Search" ng-model="searchText">
+			</div>
+		</form>
+	</div>
+</div>
+
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Item</th>
+			<th>Preço</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="item in items | filter:searchText">
+			<td>
+				<a ng-href="#/item/{{item._id}}">
+					{{ item.name }}
+				</a>
+			</td>
+			<td>{{ item.price | currency }}</td>
+		</tr>
+	</tbody>
+</table>

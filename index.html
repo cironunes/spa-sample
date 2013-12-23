@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Single Page Apps FTW!</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+	<style>
+		.wrapper { width: 400px; margin: 0 auto; }
+	</style>
+</head>
+<body ng-app="rupy">
+	<header class="navbar navbar-default">
+		<div class="container">
+			<a href="#/" class="navbar-brand">SPA demo</a>
+		</div>
+	</header>
+	<div class="container">
+		<div ng-view></div>
+	</div>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="client.js"></script>
+</body>
+</html>
